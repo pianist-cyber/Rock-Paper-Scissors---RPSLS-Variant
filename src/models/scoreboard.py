@@ -50,6 +50,14 @@ class Scoreboard:
         return self._target_score
 
     @property
+    def name_a(self) -> str:
+        return self._name_a
+
+    @property
+    def name_b(self) -> str:
+        return self._name_b
+
+    @property
     def history(self) -> List[RoundLogEntry]:
         return list(self._history)
 
