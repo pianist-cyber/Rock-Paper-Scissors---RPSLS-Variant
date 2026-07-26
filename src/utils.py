@@ -20,8 +20,7 @@ PLAYSTYLE_ALIASES: Dict[str, Playstyle] = {
     "calm": Playstyle.CALM,
 }
 
-COLUMN_WIDTHS = {"round": 6, "player": 24, "modifiers": 26, "points": 24}
-
+COLUMN_WIDTHS = {"round": 6, "player": 24, "modifiers": 26, "points": 24, "total": 18}
 
 def parse_gesture(raw: str) -> Gesture:
     if not isinstance(raw, str):
@@ -80,6 +79,8 @@ def _format_points(entry: RoundLogEntry) -> str:
 
     return f"{entry.name_a}: {signed(entry.points_a)}, {entry.name_b}: {signed(entry.points_b)}"
 
+def _format_totals(entry: RoundLogEntry) -> str:
+    return f"{entry.name_a}: {entry.total_a}, {entry.name_b}: {entry.total_b}"
 
 def render_table_header(name_a: str, name_b: str) -> str:
     header = (
@@ -88,6 +89,7 @@ def render_table_header(name_a: str, name_b: str) -> str:
         f"{name_b:<{COLUMN_WIDTHS['player']}}"
         f"{'Modifiers':<{COLUMN_WIDTHS['modifiers']}}"
         f"{'Points':<{COLUMN_WIDTHS['points']}}"
+        f"{'Total':<{COLUMN_WIDTHS['total']}}"
     )
     divider = "-" * sum(COLUMN_WIDTHS.values())
     return f"{header}\n{divider}"
@@ -102,6 +104,7 @@ def render_table_row(entry: RoundLogEntry) -> str:
         f"{_format_gesture_cell(entry.gesture_b, entry.playstyle_b):<{COLUMN_WIDTHS['player']}}"
         f"{_format_modifiers(entry):<{COLUMN_WIDTHS['modifiers']}}"
         f"{_format_points(entry):<{COLUMN_WIDTHS['points']}}"
+        f"{_format_totals(entry):<{COLUMN_WIDTHS['total']}}"
     )
 
 

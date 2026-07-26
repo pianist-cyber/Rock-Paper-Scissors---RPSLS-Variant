@@ -19,6 +19,8 @@ class RoundLogEntry:
     playstyle_b: Playstyle
     points_a: int
     points_b: int
+    total_a: int
+    total_b: int
     winner_name: Optional[str]  # None for a draw
     affinity_applied: bool
     momentum_applied: bool
@@ -107,6 +109,8 @@ class Scoreboard:
             playstyle_b=playstyle_b,
             points_a=points_a,
             points_b=points_b,
+            total_a=self._scores[self._name_a],
+            total_b=self._scores[self._name_b],
             winner_name=winner_name,
             affinity_applied=result.affinity_applied,
             momentum_applied=result.momentum_applied,
