@@ -7,24 +7,7 @@ from models.scoreboard import RoundLogEntry
 
 
 class BaseBot(ABC):
-    """
-    Shared interface every v2 bot implements.
-
-    A BaseBot instance IS a valid PlayerController (models.match.PlayerController):
-    it can be passed directly as controller_a/controller_b to Match, since
-    __call__ matches Callable[[Player], Tuple[Gesture, bool]] exactly.
-    No changes to core/ or models/ are required for this to work.
-
-    Two extra hooks exist purely inside this bot framework (the simulator
-    drives them, not Match):
-      - observe_result(): called after each round with that round's
-        RoundLogEntry, so stateful bots can remember what the opponent
-        revealed (their move, playstyle, score) without needing any
-        engine changes.
-      - reset(): called before a new match starts, so per-match memory
-        (e.g. "opponent's last move") doesn't leak between matches.
-    """
-
+    
     name: str = "BaseBot"
 
     def __call__(self, player: Player) -> Tuple[Gesture, bool]:
