@@ -1,9 +1,10 @@
 import random
 from dataclasses import dataclass
-from typing import Callable, Optional
+from typing import Callable, Optional, Iterator 
 
 from bots.base_bot import BaseBot
 from core.playstyles import Playstyle
+from core.feint import FeintTracker
 from models.match import Match
 from models.player import Player
 from models.scoreboard import RoundLogEntry
@@ -393,3 +394,47 @@ class Simulator:
             )
 
             return summary
+
+    def run_batch(
+        self,
+        on_match: Optional[Callable[[MatchSummary], None]] = None,
+        on_decision: Optional[Callable[[DecisionRecord], None]] = None,
+    ) -> Iterator[MatchSummary]:
+        """
+        Run the configured number of matches.
+
+        This method is intentionally a generator.
+
+        Instead of creating a large list containing every MatchSummary,
+        it yields one summary at a time. This allows a future recorder
+        to write each match to disk and immediately discard it from
+        memory.
+
+        DecisionRecords are already streamed through on_decision and
+        are never accumulated by the simulator.
+
+        Parameters
+        ----------
+        on_match:
+            Optional callback called once after each match completes.
+
+        on_decision:
+            Optional callback called twice per round:
+            once for Player A and once for Player B.
+
+        Yields
+        ------
+        MatchSummary
+            The summary of each completed match.
+        """
+
+        for _ in range(self._config.num_matches):
+
+            summary = self.run_match(
+                on_decision=on_decision
+            )
+
+            if on_match is not None:
+                on_match(summary)
+
+            yield summary
