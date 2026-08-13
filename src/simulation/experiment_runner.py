@@ -87,6 +87,7 @@ class ExperimentRunner:
 
             experiment_logger.open()
             experiment_logger.log(self._config)
+            print("Experiment logger wrote:", experiment_logger.file_path)
 
             # -------------------------------------------------
             # 2. Open the match and decision recorders.
@@ -94,6 +95,8 @@ class ExperimentRunner:
 
             match_logger.open()
             decision_logger.open()
+            print("Match logger:", match_logger.file_path)
+            print("Decision logger:", decision_logger.file_path)
 
             # -------------------------------------------------
             # 3. Run the simulation.
@@ -106,10 +109,7 @@ class ExperimentRunner:
                 on_match=match_logger.log,
                 on_decision=decision_logger.log,
             ):
-                # Nothing needs to be accumulated here.
-                #
-                # The MatchSummary has already been passed to
-                # MatchLogger and can therefore be discarded.
+                print("MATCH:", _summary.match_id)
                 pass
 
         finally:
