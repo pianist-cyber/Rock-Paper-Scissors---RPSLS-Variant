@@ -1,8 +1,8 @@
-from simulation.config import SimulationConfig
-from simulation.experiment_runner import ExperimentRunner
+from src.simulation.config import SimulationConfig
+from src.simulation.experiment_runner import ExperimentRunner
 
-from bots.random_bot import RandomBot
-from bots.counter_bot import CounterBot
+from src.bots.random_bot import RandomBot
+from src.bots.counter_bot import CounterBot
 
 
 def main() -> None:
