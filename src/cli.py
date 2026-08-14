@@ -1,10 +1,10 @@
 from typing import Tuple
 
 import utils
-from src.core.gestures import Gesture
-from src.core.playstyles import Playstyle
-from src.models.match import Match
-from src.models.player import Player
+from core.gestures import Gesture
+from core.playstyles import Playstyle
+from models.match import Match
+from models.player import Player
 
 COMPUTER_NAME = "Computer"
 COMPUTER_PLAYSTYLE = Playstyle.CALM  # v1: computer plays randomly/neutrally

@@ -2,7 +2,7 @@ import csv
 from pathlib import Path
 from typing import TextIO
 
-from src.simulation.config import SimulationConfig
+from simulation.config import SimulationConfig
 
 
 class ExperimentLogger:

@@ -2,7 +2,7 @@ import csv
 from pathlib import Path
 from typing import TextIO
 
-from src.simulation.simulator import DecisionRecord
+from simulation.simulator import DecisionRecord
 
 
 class DecisionLogger:

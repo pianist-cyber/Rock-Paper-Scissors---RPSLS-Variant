@@ -2,7 +2,7 @@ import csv
 from pathlib import Path
 from typing import TextIO
 
-from src.simulation.simulator import MatchSummary
+from simulation.simulator import MatchSummary
 
 
 class MatchLogger:

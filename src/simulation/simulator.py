@@ -3,12 +3,12 @@ from dataclasses import dataclass
 from typing import Callable, Iterator, Optional
 
 from src.bots.base_bot import BaseBot
-from src.core.feint import FeintTracker
-from src.core.playstyles import Playstyle
-from src.models.match import Match
-from src.models.player import Player
-from src.models.scoreboard import RoundLogEntry
-from src.simulation.config import SimulationConfig
+from core.feint import FeintTracker
+from core.playstyles import Playstyle
+from models.match import Match
+from models.player import Player
+from models.scoreboard import RoundLogEntry
+from simulation.config import SimulationConfig
 
 
 # Cache the available playstyles once instead of rebuilding
