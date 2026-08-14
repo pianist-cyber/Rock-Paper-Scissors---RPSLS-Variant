@@ -1,4 +1,4 @@
-from bots.base_bot import BaseBot
+from src.bots.base_bot import BaseBot
 
 
 class SimulationConfig:

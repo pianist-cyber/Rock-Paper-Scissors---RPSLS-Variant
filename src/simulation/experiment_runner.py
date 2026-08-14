@@ -1,8 +1,8 @@
-from simulation.config import SimulationConfig
-from simulation.simulator import Simulator
-from recorders.experiment_logger import ExperimentLogger
-from recorders.match_logger import MatchLogger
-from recorders.decision_logger import DecisionLogger
+from src.simulation.config import SimulationConfig
+from src.simulation.simulator import Simulator
+from src.recorders.experiment_logger import ExperimentLogger
+from src.recorders.match_logger import MatchLogger
+from src.recorders.decision_logger import DecisionLogger
 
 
 class ExperimentRunner:
