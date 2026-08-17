@@ -1,9 +1,9 @@
 import random
 from typing import Tuple
 
-from bots.base_bot import BaseBot
-from core.gestures import Gesture
-from models.player import Player
+from src.bots.base_bot import BaseBot
+from src.core.gestures import Gesture
+from src.models.player import Player
 
 
 class RandomBot(BaseBot):

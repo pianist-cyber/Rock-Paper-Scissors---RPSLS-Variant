@@ -1,6 +1,6 @@
-from core.feint import FeintTracker
-from core.momentum import MomentumTracker
-from core.playstyles import Playstyle
+from src.core.feint import FeintTracker
+from src.core.momentum import MomentumTracker
+from src.core.playstyles import Playstyle
 
 
 class Player:

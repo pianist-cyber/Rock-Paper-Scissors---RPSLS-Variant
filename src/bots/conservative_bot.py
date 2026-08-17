@@ -1,11 +1,11 @@
 import random
 from typing import List, Tuple
 
-from bots.base_bot import BaseBot
-from core.gestures import Gesture, GestureRules
-from core.nerf import NerfRules
-from core.playstyles import Playstyle
-from models.player import Player
+from src.bots.base_bot import BaseBot
+from src.core.gestures import Gesture, GestureRules
+from src.core.nerf import NerfRules
+from src.core.playstyles import Playstyle
+from src.models.player import Player
 
 
 def _nerf_exposure(gesture: Gesture, playstyle: Playstyle) -> int:

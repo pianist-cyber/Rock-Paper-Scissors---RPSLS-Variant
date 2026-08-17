@@ -2,11 +2,11 @@ import random
 from collections import Counter
 from typing import Tuple
 
-from bots.base_bot import BaseBot
-from bots.gesture_selection import pick_counter
-from core.gestures import Gesture
-from models.player import Player
-from models.scoreboard import RoundLogEntry
+from src.bots.base_bot import BaseBot
+from src.bots.gesture_selection import pick_counter
+from src.core.gestures import Gesture
+from src.models.player import Player
+from src.models.scoreboard import RoundLogEntry
 
 
 class FrequencyBot(BaseBot):

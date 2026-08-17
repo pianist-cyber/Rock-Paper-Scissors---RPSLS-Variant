@@ -2,11 +2,11 @@ import random
 from collections import Counter
 from typing import Optional, Tuple
 
-from bots.base_bot import BaseBot
-from bots.conservative_bot import _nerf_exposure
-from core.gestures import Gesture, GestureRules, RoundOutcome
-from models.player import Player
-from models.scoreboard import RoundLogEntry
+from src.bots.base_bot import BaseBot
+from src.bots.conservative_bot import _nerf_exposure
+from src.core.gestures import Gesture, GestureRules, RoundOutcome
+from src.models.player import Player
+from src.models.scoreboard import RoundLogEntry
 
 WIN_WEIGHT = 2.0
 LOSE_WEIGHT = -2.0

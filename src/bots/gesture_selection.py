@@ -1,7 +1,7 @@
 import random
 from typing import List
 
-from core.gestures import Gesture, GestureRules
+from src.core.gestures import Gesture, GestureRules
 
 
 def counters_of(gesture: Gesture) -> List[Gesture]:

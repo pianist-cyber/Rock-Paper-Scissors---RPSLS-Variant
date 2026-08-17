@@ -1,11 +1,11 @@
 import random
 from typing import Optional, Tuple
 
-from bots.gesture_selection import pick_counter
-from bots.base_bot import BaseBot
-from core.gestures import Gesture
-from models.player import Player
-from models.scoreboard import RoundLogEntry
+from src.bots.gesture_selection import pick_counter
+from src.bots.base_bot import BaseBot
+from src.core.gestures import Gesture
+from src.models.player import Player
+from src.models.scoreboard import RoundLogEntry
 
 
 class CounterBot(BaseBot):

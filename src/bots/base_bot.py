@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 from typing import Tuple
 
-from core.gestures import Gesture
-from models.player import Player
-from models.scoreboard import RoundLogEntry
+from src.core.gestures import Gesture
+from src.models.player import Player
+from src.models.scoreboard import RoundLogEntry
 
 
 class BaseBot(ABC):

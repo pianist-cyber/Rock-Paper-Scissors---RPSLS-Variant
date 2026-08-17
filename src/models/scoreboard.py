@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 from typing import Dict, List, Optional
 
-from core.gestures import Gesture
-from core.playstyles import Playstyle
-from core.round import VALID_TARGET_SCORES, RoundResult
+from src.core.gestures import Gesture
+from src.core.playstyles import Playstyle
+from src.core.round import VALID_TARGET_SCORES, RoundResult
 
 
 @dataclass(frozen=True)

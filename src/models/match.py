@@ -1,9 +1,9 @@
 from typing import Callable, Optional, Tuple
 
-from core.gestures import Gesture
-from core.round import RoundResolver, RoundThrow
-from models.player import Player
-from models.scoreboard import RoundLogEntry, Scoreboard
+from src.core.gestures import Gesture
+from src.core.round import RoundResolver, RoundThrow
+from src.models.player import Player
+from src.models.scoreboard import RoundLogEntry, Scoreboard
 
 PlayerController = Callable[[Player], Tuple[Gesture, bool]]
 
