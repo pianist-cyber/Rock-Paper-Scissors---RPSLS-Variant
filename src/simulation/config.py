@@ -1,5 +1,6 @@
-from src.bots.base_bot import BaseBot
+from pathlib import Path
 
+from src.bots.base_bot import BaseBot
 
 class SimulationConfig:
     """
@@ -27,7 +28,9 @@ class SimulationConfig:
         target_score: int,
         num_matches: int,
         seed: int | None = None,
-        output_directory: str = "data",
+        output_directory: str = str(
+            Path(__file__).resolve().parents[2] / "data"
+        )
     ) -> None:
         if not isinstance(experiment_name, str) or not experiment_name.strip():
             raise ValueError("experiment_name must be a non-empty string")
