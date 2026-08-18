@@ -3,3 +3,6 @@ __pycache__/
 
 # Generated simulation data
 data/*.csv
+data/decisions.csv
+data/experiments.csv
+data/matches.csv
