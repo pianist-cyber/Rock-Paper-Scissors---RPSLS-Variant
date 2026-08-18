@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+
+# Generated simulation data
+data/*.csv
